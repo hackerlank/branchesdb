@@ -1,9 +1,12 @@
 #include <iostream>
+#include "test.h"
 
 using namespace std;
 
-int main()
-{
+int main() {
+    Test test;
+    test.setCounter(123);
+    cout << test.getCounter() << endl;
     cout << "Hello world!" << endl;
     return 0;
 }

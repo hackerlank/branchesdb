@@ -31,8 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-std=c++11" />
+			<Add option="-v" />
+			<Add directory="include" />
 		</Compiler>
+		<Unit filename="include/test.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/test.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
