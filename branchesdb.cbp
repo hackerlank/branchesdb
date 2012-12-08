@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="release">
@@ -29,11 +30,12 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-Weffc++" />
+			<Add option="-Wmain" />
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 			<Add option="-std=c++11" />
 			<Add option="-v" />
-			<Add directory="include" />
 		</Compiler>
 		<Unit filename="include/test.h" />
 		<Unit filename="main.cpp" />
