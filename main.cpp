@@ -1,13 +1,11 @@
+#include "util/random.h"
+
 #include <iostream>
-#include <boost/array.hpp>
-#include "test.h"
 
 using namespace std;
 
 int main() {
-    Test test;
-    test.setCounter(123);
-    cout << test.getCounter() << endl;
-    cout << "Hello world!" << endl;
+    Random random;
+    cout << random() << endl;
     return 0;
 }
