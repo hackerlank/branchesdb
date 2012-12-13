@@ -1,10 +1,10 @@
 #include "util/random.h"
 #include "util/error.h"
-
 #include <cstring>
 #include <iostream>
 #include <fstream>
 
+using namespace branchesdb::util;
 using namespace std;
 
 Random::Random() : random() {

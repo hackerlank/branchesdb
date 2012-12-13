@@ -3,6 +3,9 @@
 
 #include <boost/random/mersenne_twister.hpp>
 
+namespace branchesdb {
+namespace util {
+
 // Random number generator. Uses the Mersenne Twister algorithm. This algorithm
 // has excellent randomness qualities (if initialized properly). It does not
 // provide cryptographically secure randomness, though (e.g., given the same
@@ -15,8 +18,6 @@
 //
 // This is a large object. It consumes 2K+ bytes of memory.
 class Random {
-	boost::mt19937 random;
-
 public:
     Random();
 
@@ -31,6 +32,11 @@ public:
 private:
     Random(const Random& other);
     Random& operator=(const Random& other);
+
+private:
+	boost::mt19937 random;
 };
+
+}}
 
 #endif // RANDOM_H
