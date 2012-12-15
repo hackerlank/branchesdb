@@ -4,7 +4,7 @@
 namespace branchesdb {
 namespace util {
 
-Id::Id(Random& random) {
+Id::Id(Random& random) noexcept {
     //            1          2
     // 01234567 89012345 67890123
     // ------== ====---- --======    0-2 =>   0-3  (map octets 0-2 to chars 0-3)

@@ -12,14 +12,14 @@ class Id {
 public:
 	static const std::size_t length = (128 + 5) / 6;  // 22 characters.
 
-	explicit Id(Random& random);
+	explicit Id(Random& random) noexcept;
 
-	explicit Id(void* buffer) {
+	explicit Id(const void* buffer) noexcept {
 		memcpy(chars, buffer, length);
 		chars[length] = '\0';
 	}
 
-	operator const char*() const {
+	operator const char*() const noexcept {
 	    return chars;
 	}
 
