@@ -21,11 +21,11 @@ class Random {
 public:
     Random();
 
-	uint32_t operator()() {
+	uint32_t operator()() noexcept {
 		return random();
 	}
 
-	void generate(char* buffer, std::size_t count) {
+	void generate(char* buffer, std::size_t count) noexcept {
 		random.generate(buffer, buffer + count);
 	}
 

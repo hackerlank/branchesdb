@@ -1,10 +1,14 @@
 #include "util/id.h"
 #include "util/random.h"
 
-namespace branchesdb {
-namespace util {
+using namespace branchesdb::util;
+using namespace std;
 
-Id::Id(Random& random) noexcept {
+namespace {
+Random numbers;
+}
+
+string Id::generate() noexcept {
     //            1          2
     // 01234567 89012345 67890123
     // ------== ====---- --======    0-2 =>   0-3  (map octets 0-2 to chars 0-3)
@@ -33,13 +37,15 @@ Id::Id(Random& random) noexcept {
 
     static const char* letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    random.generate(chars, length);
+    char chars[length];
+
+    numbers.generate(chars, length);
 
     for (size_t i = 0; i < length; i++) {
         char limit = limits[i];
         char value = chars[i] & 0x3F;
         while (value >= limit) {
-            value = random() & 0x3F;
+            value = numbers() & 0x3F;
         }
         chars[i] = value;
     }
@@ -51,7 +57,6 @@ Id::Id(Random& random) noexcept {
     for (size_t i = 0; i < length; i++) {
         chars[i] = letters[(int)chars[i]];
     }
-    chars[length] = '\0';
-}
 
-}}
+    return string(chars, length);
+}
