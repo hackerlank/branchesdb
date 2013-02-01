@@ -3,7 +3,6 @@
 
 #include <string>
 
-namespace branchesdb {
 namespace util {
 
 class Id {
@@ -12,7 +11,7 @@ public:
     static std::string generate() noexcept;
 };
 
-}}
+}
 
 #endif // ID_H
 

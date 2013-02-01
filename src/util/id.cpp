@@ -1,7 +1,7 @@
 #include "util/id.h"
 #include "util/random.h"
 
-using namespace branchesdb::util;
+using namespace util;
 using namespace std;
 
 namespace {

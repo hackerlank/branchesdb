@@ -4,7 +4,6 @@
 #include <stdexcept>
 #include <string>
 
-namespace branchesdb {
 namespace util {
 
 class Error : public std::runtime_error {
@@ -13,6 +12,6 @@ public:
     virtual ~Error() noexcept;
 };
 
-}}
+}
 
 #endif // ERROR_H

@@ -3,7 +3,6 @@
 
 #include <boost/random/mersenne_twister.hpp>
 
-namespace branchesdb {
 namespace util {
 
 // Random number generator. Uses the Mersenne Twister algorithm. This algorithm
@@ -37,6 +36,6 @@ private:
 	boost::mt19937 random;
 };
 
-}}
+}
 
 #endif // RANDOM_H

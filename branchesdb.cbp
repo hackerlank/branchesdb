@@ -45,6 +45,8 @@
 			<Add option="-Wmain" />
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
+			<Add option="-v" />
+			<Add option="-isystem $(#boost)" />
 			<Add directory="include" />
 		</Compiler>
 		<Unit filename="include/util/error.h" />

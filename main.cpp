@@ -1,7 +1,7 @@
 #include "util/id.h"
 #include <iostream>
 
-using namespace branchesdb::util;
+using namespace util;
 using namespace std;
 
 int main() {
