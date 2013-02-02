@@ -43,10 +43,11 @@
 			<Add option="-Wswitch-default" />
 			<Add option="-Weffc++" />
 			<Add option="-Wmain" />
+			<Add option="-Wextra" />
 			<Add option="-Wall" />
-			<Add option="-std=c++11" />
-			<Add option="-v" />
+			<Add option="-fno-rtti" />
 			<Add option="-isystem $(#boost)" />
+			<Add option="-std=c++11" />
 			<Add directory="include" />
 		</Compiler>
 		<Unit filename="include/util/error.h" />
@@ -59,6 +60,7 @@
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
