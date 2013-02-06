@@ -6,6 +6,7 @@ using namespace std;
 
 namespace {
 
+#if 0
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/wait.h>
@@ -27,10 +28,12 @@ void print_trace() {
         waitpid(child_pid,NULL,0);
     }
 }
+#endif
 
-#include <execinfo.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <execinfo.h>
+#include <cxxabi.h>
 
 void print_backtrace() {
     void *array[10];
@@ -53,7 +56,7 @@ void print_backtrace() {
 
 int main() {
     //cout << Id::generate() << endl;
-    print_trace();
+    //print_trace();
     print_backtrace();
     return 0;
 }
