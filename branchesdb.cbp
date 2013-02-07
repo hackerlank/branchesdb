@@ -52,6 +52,7 @@
 		</Compiler>
 		<Linker>
 			<Add option="-rdynamic" />
+			<Add library="dl" />
 		</Linker>
 		<Unit filename="include/util/error.h" />
 		<Unit filename="include/util/id.h" />
