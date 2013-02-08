@@ -48,7 +48,7 @@ void print_backtrace() {
     //printf("Obtained %zd stack frames.\n", size);
 
     for (i = 0; i < size; i++)
-        printf("%s\n", strings[i]);
+        printf("%s %lx\n", strings[i], array[i]);
 
     free(strings);
     printf("\n");
