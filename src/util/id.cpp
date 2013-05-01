@@ -1,8 +1,8 @@
 #include "util/id.h"
 #include "util/random.h"
 
-using namespace util;
 using namespace std;
+using namespace util;
 
 namespace {
 Random numbers;

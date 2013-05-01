@@ -5,7 +5,7 @@
 #include <sstream>
 #include <vector>
 #include <string>
-#include "util/id.h"
+#include "util/idpool.h"
 
 using namespace util;
 using namespace std;
@@ -113,8 +113,8 @@ void print_backtrace() {
 }
 
 int main() {
-    //cout << Id::generate() << endl;
+    for (int i = 0; i < 20; i++) cout << IdPool::get() << endl;
     //print_trace();
-    print_backtrace();
+    //print_backtrace();
     return 0;
 }
