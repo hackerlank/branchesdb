@@ -5,19 +5,19 @@
 #include <sstream>
 #include <vector>
 #include <string>
+<<<<<<< HEAD
 #include "util/idpool.h"
+=======
+#include <sys/wait.h>
+#include <unistd.h>
+#include "util/id.h"
+>>>>>>> 621d8088b4f4bbb98c64b5c065a140d8de0144a2
 
 using namespace util;
 using namespace std;
 
-namespace {
-
-#if 0
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/wait.h>
-#include <unistd.h>
-
+class Trace {
+public:
 void print_trace() {
     char pid_buf[30];
     sprintf(pid_buf, "%d", getpid());
@@ -34,7 +34,6 @@ void print_trace() {
         waitpid(child_pid,NULL,0);
     }
 }
-#endif
 
 void print_backtrace() {
     void *array[10];
@@ -45,13 +44,12 @@ void print_backtrace() {
     size = backtrace(array, 10);
     strings = backtrace_symbols(array, size);
 
-    //printf("Obtained %zd stack frames.\n", size);
-
+    printf("\n");
     for (i = 0; i < size; i++)
-        printf("%s %lx\n", strings[i], array[i]);
+        printf("%s\n", strings[i]);
+    printf("\n");
 
     free(strings);
-    printf("\n");
 
     using namespace abi;
 
@@ -110,11 +108,13 @@ void print_backtrace() {
     }
 }
 
-}
+};
 
 int main() {
     for (int i = 0; i < 20; i++) cout << IdPool::get() << endl;
     //print_trace();
     //print_backtrace();
+    //Trace().print_trace();
+    //Trace().print_backtrace();
     return 0;
 }

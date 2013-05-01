@@ -56,10 +56,14 @@
 		</Linker>
 		<Unit filename="include/util/error.h" />
 		<Unit filename="include/util/id.h" />
+		<Unit filename="include/util/idpool.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="include/util/random.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/util/error.cpp" />
 		<Unit filename="src/util/id.cpp" />
+		<Unit filename="src/util/idpool.cpp" />
 		<Unit filename="src/util/random.cpp" />
 		<Extensions>
 			<code_completion />
